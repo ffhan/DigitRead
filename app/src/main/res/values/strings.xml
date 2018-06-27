@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">DigitRead</string>
+    <string name="not_found">No prediction</string>
+</resources>
