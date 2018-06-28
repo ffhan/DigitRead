@@ -15,7 +15,7 @@ class MainActivity : Activity() {
 
         label = findViewById(R.id.predictionText)
 
-        var activityImage : ImageView = findViewById(R.id.myImage)
+//        var activityImage : ImageView = findViewById(R.id.myImage)
 
         val clear: Button = findViewById(R.id.clearButton)
         val canv : MyThing = findViewById(R.id.myCanvas)

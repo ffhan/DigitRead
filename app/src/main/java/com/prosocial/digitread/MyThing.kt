@@ -62,12 +62,13 @@ class MyThing @JvmOverloads constructor(context: Context, attrs: AttributeSet? =
             }
         }
         val new_img = Bitmap.createScaledBitmap(img, 28, 28, true)
-        currentActivity.myImage.setImageBitmap(new_img)
+//        currentActivity.myImage.setImageBitmap(new_img)
         return true
     }
 
     fun reset(){
         path = Path()
+        img!!.recycle()
         img = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
         privateCanvas.setBitmap(img)
         invalidate()
@@ -109,7 +110,13 @@ class MyThing @JvmOverloads constructor(context: Context, attrs: AttributeSet? =
         }
         Log.d("RESULTS", Arrays.toString(output))
         val label : TextView = currentActivity.predictionText
-        if(maksPerc > 0.5) label.text = "${maks} with certainty ${maksPerc * 100}%"
-        else label.text = "No prediction"
+        if(maksPerc > 0.5){
+            label.text = "${maks} with certainty ${maksPerc * 100}%"
+            label.setTextColor(Color.GREEN)
+        }
+        else{
+            label.text = "No prediction"
+            label.setTextColor(Color.RED)
+        }
     }
 }

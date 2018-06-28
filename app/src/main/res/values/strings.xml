@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">DigitRead</string>
     <string name="not_found">No prediction</string>
+    <string name="clear_button">Clear</string>
 </resources>
